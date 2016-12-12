@@ -1,3 +1,4 @@
+<?php
 $c = curl_init('https://api.amazon.com/auth/o2/tokeninfo?access_token=' . urlencode($_REQUEST['access_token']));
 curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
  
@@ -22,3 +23,4 @@ curl_close($c);
 $d = json_decode($r);
  
 echo sprintf('%s %s %s', $d->name, $d->email, $d->user_id);
+?>
